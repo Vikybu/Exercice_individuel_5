@@ -85,4 +85,19 @@ function isPalindrome(date){
     }    
 }
 
-isPalindrome("12/02/2011")
+//isPalindrome("12/02/2011")
+
+function getNextPalindromes(){
+    let todayDate = new Date()
+    let day = String(todayDate.getDate()).padStart(2, '0');
+    let month = String(todayDate.getMonth()).padStart(2, '0')
+    let year = todayDate.getFullYear()
+    const formatTodayDate = `${day}/${month}/${year}`
+    console.log(formatTodayDate)
+
+    let newDate = new Date()
+    newDate = todayDate.getDate()+1
+    console.log(newDate)
+}
+
+getNextPalindromes()

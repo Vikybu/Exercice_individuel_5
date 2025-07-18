@@ -12,16 +12,14 @@ function isValidate(date){
                 console.log(`Le jour n'est pas valide. Merci de mettre un jour positif.`)
             } else { 
                 if (maxDaysInMonth(date) == true ) {
-                    console.log(`La date ${date} est valide`)
+                    return true
                 } else {
-                    console.log(`La date ${date} est invalide`)  
+                    return false
                 }
             }
         }
     }
 }
-
-let date = "22/12/2024"
 
 //Vérification de la validité de la date selon le mois
 function maxDaysInMonth(date){
@@ -75,4 +73,16 @@ function maxDaysInMonth(date){
     } return true
 }
 
-isValidate(date)
+function isPalindrome(date){
+    if (isValidate(date) == true){
+        let normalDate = date.replaceAll('/', "")
+        let reverseDate = normalDate.split('').reverse().join('')
+        if (normalDate == reverseDate){
+            console.log(`${date} est un palindrome`)
+        } else {
+            console.log(`${date} n'est pas un palindrome`)
+        }
+    }    
+}
+
+isPalindrome("12/02/2011")
